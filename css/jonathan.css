@@ -1,5 +1,46 @@
 main{
-
-
+height:700px;
+width:100%;
+background-color: green;
 
 }
+
+.yesJava{
+  height:600px;
+  width:600px;
+  border:5px solid grey;
+  z-index:10;
+  top:30px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  position: relative;
+  display: none;
+  border-radius: 15px;
+}
+.noJava{
+  top:200px;
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+}
+.pictures{
+  display:flex;
+  z-index: 0;
+  position: relative;
+}
+#pilVänster,#pilHöger{
+  position: absolute;
+  top:285px;
+  z-index: 20;
+  height:30px;
+  width:30px;
+  cursor: pointer;
+}
+#pilVänster{left:20px;}#pilHöger{right:20px;}
+.dottedDot,.solid{
+  position:absolute;
+  z-index: 30;
+  cursor: pointer;
+}
+.dottedDot{top:564px;}.solid{top:562px;}

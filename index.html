@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/adam.css">
     <link rel="stylesheet" href="css/jonathan.css">
-    <title></title>
+    <title>Solceller</title>
   </head>
   <body>
 <nav>
@@ -13,43 +13,45 @@
 <main>
   <!-- Om java är av -->
     <article class="noJava">
-      <img src="bilder/bild1.png" alt="cringe1" width="200px" height="200px" border="5 solid">
-      <img src="bilder/bild2.png" alt="cringe2" width="200px" height="200px" border="5 solid">
-      <img src="bilder/bild3.jpg" alt="cringe3" width="200px" height="200px" border="5 solid">
+      <img class="njb" src="bilder/solcell13.jpg" alt="cringe1">
+      <img class="njb" src="bilder/solcell23.jpg" alt="cringe2">
+      <img class="njb" src="bilder/solcell33.jpg" alt="cringe3">
     </article>
 
 
     <!-- Om java är på -->
 <article class="yesJava">
 
-  <!-- Prickdelen för att veta vilken sida man är på -->
-  <img id="dottedLeft" class="dottedDot" src="bilder/dotted.png" alt="cringe1" style="left:263px">
-  <img id="dottedMid" class="dottedDot" src="bilder/dotted.png" alt="cringe1" style="left:292px">
-  <img id="dottedRight" class="dottedDot" src="bilder/dotted.png" alt="cringe1" style="left:321px">
-  <img id="solidLeft" class="solid" src="bilder/solid.png" alt="cringe1" style="left:261px">
-  <img id="solidMid" class="solid" src="bilder/solid.png" alt="cringe1" style="left:290px">
-  <img id="solidRight" class="solid" src="bilder/solid.png" alt="cringe1" style="left:319px">
-
-  <!-- Pildelen för att kunna byta sida -->
-  <div id="pilVänster"><img src="bilder/chevleft.png" alt=""></div>
-  <div id="pilHöger"><img src="bilder/chevright.png" alt=""></div>
-
   <!-- Bilddelen som innehåller de olika bilderna -->
   <article class="pictures">
-    <img src="bilder/bild3.jpg" alt="cringe3">
-    <img src="bilder/bild1.png" alt="cringe1">
-    <img src="bilder/bild2.png" alt="cringe2">
-    <img src="bilder/bild3.jpg" alt="cringe3">
-    <img src="bilder/bild1.png" alt="cringe1">
+    <img src="bilder/solcell33.jpg" alt="cringe3">
+    <img src="bilder/solcell13.jpg" alt="cringe1">
+    <img src="bilder/solcell23.jpg" alt="cringe2">
+    <img src="bilder/solcell33.jpg" alt="cringe3">
+    <img src="bilder/solcell13.jpg" alt="cringe1">
     </article>
 
 
   </article>
+  <div class="fakeYesJava">
+    <!-- Pildelen för att kunna byta sida -->
+    <div id="pilVänster"><img src="bilder/chevleft.png" alt=""></div>
+    <div id="pilHöger"><img src="bilder/chevright.png" alt=""></div>
+
+      <!-- Prickdelen för att veta vilken sida man är på -->
+      <img id="dottedLeft" class="dottedDot" src="bilder/dotted.png" alt="cringe1" style="left:513px">
+      <img id="dottedMid" class="dottedDot" src="bilder/dotted.png" alt="cringe1" style="left:542px">
+      <img id="dottedRight" class="dottedDot" src="bilder/dotted.png" alt="cringe1" style="left:571px">
+      <img id="solidLeft" class="solid" src="bilder/solid.png" alt="cringe1" style="left:511px">
+      <img id="solidMid" class="solid" src="bilder/solid.png" alt="cringe1" style="left:540px">
+      <img id="solidRight" class="solid" src="bilder/solid.png" alt="cringe1" style="left:569px">
+
+</div>
 </main>
 <footer>
 
 </footer>
-<script <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
     var i=1;  // sidnummer, börjar på sida 1
     var solid1=$("#solidLeft");
@@ -59,17 +61,18 @@
     var arrowRight=$("#pilHöger");
     var bilder=$(".pictures");
     $(".yesJava").show();
+    $(".fakeYesJava").show();
     $(".noJava").hide();
     $(".solid").hide();
     solid1.show();
-    bilder.css("left", "-=600");  // ser till så att man börjar på sida 1 och inte 3
-    arrowLeft.on( "click", fuu );  // kod från daniel
+    bilder.css("left", "-=1100");  // ser till så att man börjar på sida 1 och inte 3
+    arrowLeft.on( "click", fuu );
     arrowRight.on( "click", foo );
 
 //---------------------------------------------------------------
 
     function foo(){
-      arrowRight.off( "click",  foo );  // kod från daniel
+      arrowRight.off( "click",  foo );
     i++;
       if(i==4){
         bilder.css("left", "0");  // tar bildspelet från sida 3 till sida 1
@@ -81,7 +84,7 @@
       if(i==3){solid1.hide();solid2.hide();solid3.show();} // -||-
 
       bilder.animate({  // flyttar bildspelet ett steg åt höger
-        'left' : "-=600px"
+        'left' : "-=1100px"
 
       },function(){
         arrowRight.on( "click",  foo );  // delay som gör så att bildspelet inte går sönder
@@ -91,10 +94,10 @@
 //---------------------------------------------------------------
 
     function fuu(){
-      arrowLeft.off( "click",  fuu );  // kod från daniel
+      arrowLeft.off( "click",  fuu );
       i--;
       if(i==-1){
-        bilder.css("left", "-=1800");  // tar bildspelet från sida 3 till sida 2
+        bilder.css("left", "-=3300");  // tar bildspelet från sida 3 till sida 2
         i=2;
       }
       console.log(i);
@@ -103,7 +106,7 @@
       if(i==0){solid1.hide();solid2.hide();solid3.show();} // -||-
 
       bilder.animate({  // flyttar bildspelet ett steg åt vänster
-        'left' : "+=600px"
+        'left' : "+=1100px"
       },function(){
         arrowLeft.on( "click",  fuu );  // delay som gör så att bildspelet inte går sönder
       });
@@ -111,13 +114,13 @@
 
 //---------------------------------------------------------------
 
-    $("#dottedLeft").click(function(){bilder.css("left", "-600px");i=1;
+    $("#dottedLeft").click(function(){bilder.css("left", "-1100px");i=1;
     solid1.show();solid2.hide();solid3.hide(); // byter sida till pricken man klickat på
   });
-    $("#dottedMid").click(function(){bilder.css("left", "-1200px");i=2;
+    $("#dottedMid").click(function(){bilder.css("left", "-2200px");i=2;
     solid1.hide();solid2.show();solid3.hide(); // byter sida till pricken man klickat på
   });
-    $("#dottedRight").click(function(){bilder.css("left", "-1800px");i=3;
+    $("#dottedRight").click(function(){bilder.css("left", "-3300px");i=3;
     solid1.hide();solid2.hide();solid3.show(); // byter sida till pricken man klickat på
   });
 

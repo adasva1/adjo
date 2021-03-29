@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/adam.css">
     <link rel="stylesheet" href="css/jonathan.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
   </head>
   <body>
@@ -11,12 +12,12 @@
   <div class="logo">
     <h4>Solceller</h4>
   </div>
-  <ul class="nav-links">
+  <ul id="nav-links">
         <li><a href="#">Produkter</a></li>
         <li><a href="#">Kontakta oss</a></li>
         <li><a href="#">Hem</a></li>
   </ul>
-  <div class="burger">
+  <div id="burger">
     <div class="line1"></div>
     <div class="line2"></div>
     <div class="line3"></div>
@@ -131,7 +132,15 @@
     $("#dottedRight").click(function(){bilder.css("left", "-1800px");i=3;
     solid1.hide();solid2.hide();solid3.show(); // byter sida till pricken man klickat på
   });
-
+var burgerbutton=document.getElementById("burger")
+var navlinks=document.getElementById("nav-links")
+burgerbutton.addEventListener("click",()=>{
+  if (navlinks.style.right=="-150vw"){
+    navlinks.style.right="0"
+  }else{
+    navlinks.style.right="-150vw"
+  }
+})
 </script>
   </body>
 </html>

@@ -8,6 +8,9 @@ nav{
   align-items: center;
   min-height: 8vh;
   background-color: lightgray;
+  position: fixed;
+  width:100%;
+  z-index: 163;
 }
 
 .logo{
@@ -47,6 +50,12 @@ nav{
 
 #burger{
   display:none;
+}
+footer h2{
+  font-size:1.5rem;
+  margin-left: 5%;
+  margin-top: 2%;
+  z-index:200;
 }
 
 @media screen and (max-width: 850px){

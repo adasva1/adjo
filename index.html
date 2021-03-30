@@ -4,11 +4,23 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/adam.css">
     <link rel="stylesheet" href="css/jonathan.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solceller</title>
   </head>
   <body>
 <nav>
-
+  <div class="logo">
+    <h4>Solceller</h4>
+  </div>
+  <ul id="nav-links">
+        <li><a href="#">Produkter</a></li>
+        <li><a href="#">Kontakta oss</a></li>
+        <li><a href="#">Hem</a></li>
+  </ul>
+  <div id="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
 </nav>
 <main>
   <!-- Om java är av -->
@@ -142,7 +154,7 @@
     $("#dottedRight").click(function(){bilder.css("left", "-3300px");i=3;
     solid1.hide();solid2.hide();solid3.show(); // byter sida till pricken man klickat på
   });
-
+}
 var burgerbutton=document.getElementById("burger")
 var navlinks=document.getElementById("nav-links")
 burgerbutton.addEventListener("click",()=>{

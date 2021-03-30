@@ -108,9 +108,9 @@ display: none;
 @media only screen and (max-width: 739px) {
 
 	.footer2nd{
-		height:120px;
+		height:80px;
 		width:100%;
-		background-color: #436bb8;
+		background-color: lightgrey;
 		position: relative;
 		border-top: 2px solid black;
 	}

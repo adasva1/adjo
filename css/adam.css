@@ -67,6 +67,7 @@ nav{
 }
 #nav-links li a{
   font-size:1.25rem;
+  color:black;
   z-index:165;
 
 }
@@ -75,5 +76,6 @@ nav{
   width:100%;
   top:0;
   z-index:165;
+  border-bottom: 2px solid black;
 }
 }

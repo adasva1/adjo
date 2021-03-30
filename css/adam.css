@@ -58,9 +58,9 @@ nav{
   width:100vw;
   text-align:center;
   position: fixed;
-  margin-top:6vh;
+  margin-top:3vh;
   background-color: dodgerblue;
-  height:92vh;
+  height:93vh;
   z-index:165;
   right:-150vw;
   transition: 0.5s;

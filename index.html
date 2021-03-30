@@ -25,11 +25,15 @@
 <main>
   <!-- Om java är av -->
     <article class="noJava">
-      <img class="njb" src="bilder/solcell12.jpg" alt="cringe1">
-      <img class="njb" src="bilder/solcell22.jpg" alt="cringe2">
-      <img class="njb" src="bilder/solcell32.jpg" alt="cringe3">
+      <img class="njb" src="bilder/solcell13.jpg" alt="cringe1">
+      <img class="njb" src="bilder/solcell23.jpg" alt="cringe2">
+      <img class="njb" src="bilder/solcell33.jpg" alt="cringe3" style="margin-bottom:50px">
     </article>
 
+    <article class="footer2nd">
+
+
+    </article>
 
     <!-- Om java är på -->
 <article class="yesJava">
@@ -65,6 +69,19 @@
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+    function showNoJava() {
+        if ( $(window).width() < 739) {
+          $(".yesJava").hide();
+          $(".fakeYesJava").hide();
+          $("footer").hide();
+          $(".noJava").show();
+          $(".solid").show();
+          $(".footer2nd").show();
+        }
+    }
+    window.addEventListener('resize', showNojava);
+
+    if ( $(window).width() > 739) {
     var i=1;  // sidnummer, börjar på sida 1
     var solid1=$("#solidLeft");
     var solid2=$("#solidMid");
@@ -74,8 +91,10 @@
     var bilder=$(".pictures");
     $(".yesJava").show();
     $(".fakeYesJava").show();
+    $("footer").show();
     $(".noJava").hide();
     $(".solid").hide();
+    $(".footer2nd").hide();
     solid1.show();
     bilder.css("left", "-=1100");  // ser till så att man börjar på sida 1 och inte 3
     arrowLeft.on( "click", fuu );
@@ -135,6 +154,7 @@
     $("#dottedRight").click(function(){bilder.css("left", "-3300px");i=3;
     solid1.hide();solid2.hide();solid3.show(); // byter sida till pricken man klickat på
   });
+}
 var burgerbutton=document.getElementById("burger")
 var navlinks=document.getElementById("nav-links")
 burgerbutton.addEventListener("click",()=>{

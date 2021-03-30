@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/adam.css">
-    <link rel="stylesheet" href="css/jonathan.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solceller</title>
-  </head>
-  <body>
-<nav>
-  <div class="logo">
-    <h4>Solceller</h4>
-  </div>
-  <ul id="nav-links">
-        <li><a href="#">Produkter</a></li>
-        <li><a href="#">Kontakta oss</a></li>
-        <li><a href="#">Hem</a></li>
-  </ul>
-  <div id="burger">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
-</nav>
-<main>
-  <!-- Om java är av -->
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/adam.css">
+  <link rel="stylesheet" href="css/jonathan.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solceller</title>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <h4>Solceller</h4>
+    </div>
+    <ul class="menu" id="menu">
+      <li><a href="#">Produkter</a></li>
+      <li><a href="#">Kontakta oss</a></li>
+      <li><a href="#">Hem</a></li>
+      <a id="return" class="close" href="#">
+        <span class="material-icons">
+          close
+        </span>
+      </a>
+    </ul>
+    <a id="burger" class="hamburger"  href="#menu">
+      <span class="material-icons">
+        menu
+      </span>
+    </a>
+  </nav>
+  <main>
+    <!-- Om java är av -->
     <article class="noJava">
       <img class="njb" src="bilder/solcell13.jpg" alt="cringe1" style="margin-top:50px;">
       <img class="njb" src="bilder/solcell23.jpg" alt="cringe2">
@@ -36,23 +43,23 @@
     </article>
 
     <!-- Om java är på -->
-<article class="yesJava">
+    <article class="yesJava">
 
-  <!-- Bilddelen som innehåller de olika bilderna -->
-  <article class="pictures">
-    <img src="bilder/solcell33.jpg" alt="cringe3">
-    <img src="bilder/solcell13.jpg" alt="cringe1">
-    <img src="bilder/solcell23.jpg" alt="cringe2">
-    <img src="bilder/solcell33.jpg" alt="cringe3">
-    <img src="bilder/solcell13.jpg" alt="cringe1">
+      <!-- Bilddelen som innehåller de olika bilderna -->
+      <article class="pictures">
+        <img src="bilder/solcell33.jpg" alt="cringe3">
+        <img src="bilder/solcell13.jpg" alt="cringe1">
+        <img src="bilder/solcell23.jpg" alt="cringe2">
+        <img src="bilder/solcell33.jpg" alt="cringe3">
+        <img src="bilder/solcell13.jpg" alt="cringe1">
+      </article>
+
+
     </article>
-
-
-  </article>
-  <article class="fakeYesJava">
-    <!-- Pildelen för att kunna byta sida -->
-    <div id="pilVänster"><img src="bilder/chevleft.png" alt=""></div>
-    <div id="pilHöger"><img src="bilder/chevright.png" alt=""></div>
+    <article class="fakeYesJava">
+      <!-- Pildelen för att kunna byta sida -->
+      <div id="pilVänster"><img src="bilder/chevleft.png" alt=""></div>
+      <div id="pilHöger"><img src="bilder/chevright.png" alt=""></div>
 
       <!-- Prickdelen för att veta vilken sida man är på -->
       <img id="dottedLeft" class="dottedDot" src="bilder/dotted.png" alt="cringe1" style="left:513px">
@@ -62,26 +69,26 @@
       <img id="solidMid" class="solid" src="bilder/solid.png" alt="cringe1" style="left:540px">
       <img id="solidRight" class="solid" src="bilder/solid.png" alt="cringe1" style="left:569px">
 
-</article>
-</main>
-<footer>
+    </article>
+  </main>
+  <footer>
 
-</footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-    function showNoJava() {
-        if ( $(window).width() < 739) {
-          $(".yesJava").hide();
-          $(".fakeYesJava").hide();
-          $("footer").hide();
-          $(".noJava").show();
-          $(".solid").show();
-          $(".footer2nd").show();
-        }
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+  function showNoJava() {
+    if ( $(window).width() < 739) {
+      $(".yesJava").hide();
+      $(".fakeYesJava").hide();
+      $("footer").hide();
+      $(".noJava").show();
+      $(".solid").show();
+      $(".footer2nd").show();
     }
-    window.addEventListener('resize', showNoJava);
+  }
+  window.addEventListener('resize', showNoJava);
 
-    if ( $(window).width() > 739) {
+  if ( $(window).width() > 739) {
     var i=1;  // sidnummer, börjar på sida 1
     var solid1=$("#solidLeft");
     var solid2=$("#solidMid");
@@ -100,11 +107,11 @@
     arrowLeft.on( "click", fuu );
     arrowRight.on( "click", foo );
 
-//---------------------------------------------------------------
+    //---------------------------------------------------------------
 
     function foo(){
       arrowRight.off( "click",  foo );
-    i++;
+      i++;
       if(i==4){
         bilder.css("left", "0");  // tar bildspelet från sida 3 till sida 1
         i=1;
@@ -122,7 +129,7 @@
       });
     }
 
-//---------------------------------------------------------------
+    //---------------------------------------------------------------
 
     function fuu(){
       arrowLeft.off( "click",  fuu );
@@ -143,18 +150,19 @@
       });
     }
 
-//---------------------------------------------------------------
+    //---------------------------------------------------------------
 
     $("#dottedLeft").click(function(){bilder.css("left", "-1100px");i=1;
     solid1.show();solid2.hide();solid3.hide(); // byter sida till pricken man klickat på
   });
-    $("#dottedMid").click(function(){bilder.css("left", "-2200px");i=2;
-    solid1.hide();solid2.show();solid3.hide(); // byter sida till pricken man klickat på
-  });
-    $("#dottedRight").click(function(){bilder.css("left", "-3300px");i=3;
-    solid1.hide();solid2.hide();solid3.show(); // byter sida till pricken man klickat på
-  });
+  $("#dottedMid").click(function(){bilder.css("left", "-2200px");i=2;
+  solid1.hide();solid2.show();solid3.hide(); // byter sida till pricken man klickat på
+});
+$("#dottedRight").click(function(){bilder.css("left", "-3300px");i=3;
+solid1.hide();solid2.hide();solid3.show(); // byter sida till pricken man klickat på
+});
 }
+/*
 var burgerbutton=document.getElementById("burger")
 var navlinks=document.getElementById("nav-links")
 burgerbutton.addEventListener("click",()=>{
@@ -163,7 +171,7 @@ burgerbutton.addEventListener("click",()=>{
   }else{
     navlinks.style.right="-150vw"
   }
-})
+})*/
 </script>
-  </body>
+</body>
 </html>
